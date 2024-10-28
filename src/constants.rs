@@ -1,17 +1,16 @@
+#![allow(dead_code)]
+
 use once_cell::sync::Lazy;
-use std::{env, str::FromStr};
+use std::env;
 
-static KEY: Lazy<String> = Lazy::new(|| {
-    env::var("HOLESKY_PRIVATE_KEY").expect("failed to retrieve private key")
-});
+static KEY: Lazy<String> =
+    Lazy::new(|| env::var("HOLESKY_PRIVATE_KEY").expect("failed to retrieve private key"));
 
-pub static RPC_URL: Lazy<String> = Lazy::new(|| {
-    env::var("HOLESKY_RPC_URL").expect("failed to retrieve rpc url")
-});
+pub static RPC_URL: Lazy<String> =
+    Lazy::new(|| env::var("HOLESKY_RPC_URL").expect("failed to retrieve rpc url"));
 
-pub static SEREE_CONTRACT_ADDRESS: Lazy<String> = Lazy::new(|| {
-    env::var("SEREE_CONTRACT_ADDRESS").expect("failed to retrieve contract address")
-});
+pub static SEREE_CONTRACT_ADDRESS: Lazy<String> =
+    Lazy::new(|| env::var("SEREE_CONTRACT_ADDRESS").expect("failed to retrieve contract address"));
 
 static DELEGATION_MANAGER_CONTRACT_ADDRESS: Lazy<String> = Lazy::new(|| {
     env::var("HOLESKY_DELEGATION_MANAGER_ADDRESS")

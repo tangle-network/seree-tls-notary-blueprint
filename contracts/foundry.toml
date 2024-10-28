@@ -1,0 +1,50 @@
+[profile.default]
+src = "src"
+test = "test"
+out = "out"
+script = "script"
+cache_path = "cache"
+broadcast = "broadcast"
+libs = ["lib"]
+auto_detect_remappings = true
+viaIR = true
+
+# remappings = [
+#     "@eigenlayer/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/",
+#     "@eigenlayer-scripts/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/script/",
+#     "@eigenlayer-middleware/=lib/eigenlayer-middleware/",
+#     "@openzeppelin/=lib/eigenlayer-middleware/lib/openzeppelin-contracts/",
+#     "@openzeppelin-upgrades/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-upgradeable/",
+#     "forge-std/=lib/forge-std/src/",
+#     "core/=lib/tnt-core/src/",
+# ]
+
+remappings = [
+    "@eigenlayer/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/",
+    "@eigenlayer-scripts/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/script/",
+    "@eigenlayer-middleware/=lib/eigenlayer-middleware/",
+    "@openzeppelin/=lib/eigenlayer-middleware/lib/openzeppelin-contracts/",
+    "@openzeppelin-upgrades/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-upgradeable/",
+    "forge-std/=lib/forge-std/src/",
+    "core/=lib/tnt-core/src/",
+    "@openzeppelin-upgrades-v4.9.0/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-upgradeable-v4.9.0/",
+    "@openzeppelin-v4.9.0/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-v4.9.0/",
+    "@prb/test/=lib/tnt-core/lib/prb-math/lib/prb-test/src/",
+    "@uniswap/v3-core/=lib/tnt-core/lib/uniswap-v3-core/contracts/",
+    "clones/=lib/tnt-core/lib/clones-with-immutable-args/src/",
+    "ds-test/=lib/eigenlayer-middleware/lib/ds-test/src/",
+    "eigenlayer-contracts/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/",
+    "eigenlayer-middleware/=lib/eigenlayer-middleware/",
+    "erc4626-tests/=lib/tnt-core/lib/openzeppelin-contracts/lib/erc4626-tests/",
+    "forge-test/=lib/tnt-core/lib/prb-test/src/",
+    "math/=lib/tnt-core/lib/prb-math/src/",
+    "openzeppelin-contracts-upgradeable/=lib/eigenlayer-middleware/lib/openzeppelin-contracts-upgradeable/",
+    "openzeppelin-contracts/=lib/eigenlayer-middleware/lib/openzeppelin-contracts/",
+    "openzeppelin/=lib/tnt-core/lib/openzeppelin-contracts/contracts/",
+    "prb-math/=lib/tnt-core/lib/prb-math/src/",
+    "prb-test/=lib/tnt-core/lib/prb-math/lib/prb-test/src/",
+    "solmate/=lib/tnt-core/lib/solmate/src/",
+    "src/=lib/tnt-core/lib/prb-math/src/",
+    "test/=lib/tnt-core/test/",
+    "tnt-core/=lib/tnt-core/"
+]

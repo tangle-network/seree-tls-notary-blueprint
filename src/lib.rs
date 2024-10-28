@@ -1,49 +1,19 @@
-use gadget_sdk as sdk;
-use gadget_sdk::tangle_subxt::tangle_testnet_runtime::api;
-use std::convert::Infallible;
+use alloy_sol_types::sol;
+use gadget_sdk::load_abi;
 
-use api::services::events::JobCalled;
-use sdk::event_listener::tangle::{
-    jobs::{services_post_processor, services_pre_processor},
-    TangleEventListener,
-};
-
+pub mod constants;
+pub mod jobs;
 pub mod tlsn;
 
-#[derive(Clone)]
-pub struct ServiceContext {
-    pub config: sdk::config::StdGadgetConfiguration,
-}
+sol!(
+    #[allow(missing_docs)]
+    #[allow(clippy::too_many_arguments)]
+    #[sol(rpc)]
+    SereeServiceManager,
+    "contracts/out/SereeServiceManager.sol/SereeServiceManager.json"
+);
 
-/// Returns "Hello World!" if `who` is `None`, otherwise returns "Hello, {who}!"
-#[sdk::job(
-    id = 0,
-    params(who),
-    result(_),
-    event_listener(
-        listener = TangleEventListener::<JobCalled, ServiceContext>,
-        pre_processor = services_pre_processor,
-        post_processor = services_post_processor,
-    ),
-)]
-pub fn say_hello(who: Option<String>, context: ServiceContext) -> Result<String, Infallible> {
-    match who {
-        Some(who) => Ok(format!("Hello, {who}!")),
-        None => Ok("Hello World!".to_string()),
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let config = sdk::config::StdGadgetConfiguration::default();
-        let context = ServiceContext { config };
-        let result = say_hello(None, context).unwrap();
-        assert_eq!(result, "Hello World!");
-        let result = say_hello(Some("Alice".to_string()), context).unwrap();
-        assert_eq!(result, "Hello, Alice!");
-    }
-}
+load_abi!(
+    SEREE_SERVICE_MANAGER_ABI,
+    "contracts/out/SereeServiceManager.sol/SereeServiceManager.json"
+);

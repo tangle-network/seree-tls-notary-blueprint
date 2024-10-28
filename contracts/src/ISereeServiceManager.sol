@@ -28,5 +28,5 @@ interface ISereeServiceManager {
 
     function createNewOrder(bytes32 _uuid, Token token, uint256 amount) external payable;
 
-    function notarizeOrder(bytes32 _uuid, bytes calldata signature, bytes32 message_hash) external;
+    function notarizeOrder(bytes32 _uuid, bytes32 message_hash, uint256 r, uint256 s, uint256 x, uint256 y) external;
 }

@@ -1,37 +1,24 @@
 use color_eyre::Result;
-use seree_tls_notary_blueprint as blueprint;
 use gadget_sdk as sdk;
 use gadget_sdk::job_runner::MultiJobRunner;
-use sdk::tangle_subxt::*;
+use notary_server::NotaryServerProperties;
+use seree_tls_notary_blueprint::tlsn::run_tlsn_server;
 
 #[sdk::main(env)]
 async fn main() -> Result<()> {
     init_logger();
-    let signer = env.first_sr25519_signer()?;
-    let client = subxt::OnlineClient::from_url(&env.http_rpc_endpoint).await?;
-
-    if env.should_run_registration() {
-        todo!();
-    }
-
-    let service_id = env.service_id.expect("should exist");
-
-    // Create your service context
-    // Here you can pass any configuration or context that your service needs.
-    let context = blueprint::ServiceContext {
-        config: env.clone(),
+    let _notary_server_props = NotaryServerProperties {
+        server: todo!(),
+        notarization: todo!(),
+        tls: todo!(),
+        notary_key: todo!(),
+        logging: todo!(),
+        authorization: todo!(),
     };
-
-    // Create the event handler from the job
-    let say_hello_job = blueprint::SayHelloEventHandler {
-        service_id,
-        client,
-        signer,
-        context,
-    };
+    run_tlsn_server(_notary_server_props).await?;
 
     tracing::info!("Starting the event watcher ...");
-    MultiJobRunner::new(env).job(say_hello_job).run().await?;
+    MultiJobRunner::new(env).run().await?;
 
     tracing::info!("Exiting...");
     Ok(())
