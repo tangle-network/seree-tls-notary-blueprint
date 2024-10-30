@@ -2,7 +2,7 @@ use color_eyre::Result;
 use gadget_sdk as sdk;
 use gadget_sdk::job_runner::MultiJobRunner;
 use notary_server::NotaryServerProperties;
-use seree_tls_notary_blueprint::tlsn::run_tlsn_server;
+use tls_notary_blueprint::tlsn::run_tlsn_server;
 
 #[sdk::main(env)]
 async fn main() -> Result<()> {

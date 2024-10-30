@@ -1,7 +1,7 @@
 use gadget_sdk::Error;
 use notary_server::{run_server, NotaryServerProperties};
 
-/// Run the TLS Notary server with the given configuration
+/// Run the TLSNotary notary server with the given configuration
 pub async fn run_tlsn_server(notary_server_props: NotaryServerProperties) -> Result<(), Error> {
     // Spawn the server in a separate task
     let server_handle = tokio::spawn(async move { run_server(&notary_server_props).await });

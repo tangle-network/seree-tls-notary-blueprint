@@ -1,25 +1,10 @@
-# <h1 align="center"> Seree TLS Notary Blueprint 🔐 </h1>
+# <h1 align="center"> TLSNotary notary Blueprint 🔐 </h1>
 
-**A TLS Notary Blueprint for Seree on Tangle**
+**A TLSNotary notary Blueprint on Tangle**
 
 ## 🔍 Overview
 
-The Seree TLS Notary Blueprint provides a secure and scalable infrastructure for verifying TLS-based proofs of payment processing and currency exchange transactions. It leverages TLSNotary to create cryptographic proofs that can be used to validate on-chain and off-chain payment flows.
-
-### Key Features
-
-- **TLS Notary Integration**: Creates verifiable proofs of TLS sessions for payment validation
-- **Secure Payment Processing**: Validates payment flows between on-chain and off-chain systems
-- **Scalable Architecture**: Built on Tangle Network for high throughput and reliability
-- **Smart Contract Integration**: Seamless interaction with Ethereum-based payment contracts
-
-### Architecture
-
-The blueprint consists of three main components:
-
-1. **TLS Notary Server**: Handles TLS session proofs and verification
-2. **Payment Processor**: Manages currency conversions and payment flows
-3. **Smart Contract Interface**: Interacts with on-chain payment contracts
+This Blueprint template simply runs a TLSNotary notary server. Extend it in new ways to interact with TLSNotary.
 
 ## 📚 Prerequisites
 
