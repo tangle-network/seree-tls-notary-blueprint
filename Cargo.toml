@@ -29,7 +29,7 @@ alloy-provider = { version = "0.1", default-features = false, features = ["reqwe
 alloy-pubsub = { version = "0.1" }
 alloy-signer = { version = "0.1" }
 alloy-signer-local = { version = "0.1" }
-alloy-network = { version = "0.1" }
+alloy-network = { version = "0.5" }
 alloy-node-bindings = "0.4.2"
 alloy-contract = { version = "0.1" }
 alloy-consensus = { version = "0.1" }
